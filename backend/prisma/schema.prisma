@@ -26,7 +26,8 @@ model Todo{
   id Int @id @default(autoincrement())
   title String
   description String
-  userId Int
+  userId Int //will add a done? field
+  done Boolean @default(false)
   typeId Int?
   user User @relation(fields: [userId], references: [id])
   type Type? @relation(fields: [typeId], references: [id])
